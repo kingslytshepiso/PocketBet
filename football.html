@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PocketBets | The Joy to your Pockets</title>
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./global-style.css" />
+    <link rel="stylesheet" href="./bet-slip-style.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar fixed-top navbar-expand-lg navbar-dark">
+        <a class="navbar-brand align-middle" href="./football.html">
+          <div class="d-flex flex-column">
+            <img src="images/pocketbets1.png" alt="logo images" class="logo" />
+          </div>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-md-end"
+          id="navbarSupportedContent"
+        >
+          <div>
+            <ul id="nav-list" class="navbar-nav mr-auto nav-pills">
+              <li class="nav-item">
+                <a
+                  href="#login"
+                  class="nav-link"
+                  data-toggle="modal"
+                  data-target="#loginContainer"
+                >
+                  Login
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  href="#register"
+                  class="nav-link"
+                  data-toggle="modal"
+                  data-target="#registerContainer"
+                >
+                  Register
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="mt-5 pt-5">
+      <div class="d-flex justify-content-center">
+        <div class="pbet-item-container">
+          <h4 class="text-center">PocketBets</h4>
+          <div class="filtering-container">
+            <a href="./football.html" class="btn btn-primary"> Football </a>
+            <a href="./casino.html" class="btn btn-primary"> Casino </a>
+
+            <a href="./cricket.html" class="btn btn-primary"> Cricket </a>
+            <a href="./rugby.html" class="btn btn-primary"> Rugby </a>
+            <a href="./other-games.html" class="btn btn-primary">
+              More games...
+            </a>
+          </div>
+          <div class="filtering-container">
+            <div class="form-group col">
+              <div class="col"><label>Country:</label></div>
+              <div class="col">
+                <select class="form-control" name="country">
+                  <option value="1">All</option>
+                  <option value="2">South Africa</option>
+                  <option value="2">England</option>
+                  <option value="2">Spain</option>
+                  <option value="2">Italy</option>
+                  <option value="2">Germany</option>
+                  <option value="2">France</option>
+                  <option value="2">Netherlands</option>
+                  <option value="2">Portugal</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group col">
+              <div class="col"><label>Date:</label></div>
+              <div class="col">
+                <input type="date" class="form-control" name="scheduleDate" />
+              </div>
+            </div>
+          </div>
+          <div class="filtering-container">
+            <div class="form-group col">
+              <div class="col"><label>Competition:</label></div>
+              <div class="col">
+                <select class="form-control" name="competition">
+                  <option value="1">All</option>
+                  <option value="2">DSTV Premier League</option>
+                  <option value="2">Nedbank Cup</option>
+                  <option value="2">MTN8 Cup</option>
+                  <option value="2">English Premier League</option>
+                  <option value="2">FA Cup</option>
+                  <option value="2">Carabao Cup</option>
+                  <option value="2">laliga</option>
+                  <option value="2">Copa Del Rey</option>
+                  <option value="2">Serie A</option>
+                  <option value="2">Coppa Italia</option>
+                  <option value="2">Bundesliga</option>
+                  <option value="2">Erevedisie</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="bet-list-container">
+            <ul id="betList"></ul>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="footer">
+        <div class="d-flex justify-content-center">
+          <ul class="navbar-nav navbar-dark list-unstyled d-flex flex-row">
+            <li class="m-3">
+              <a class="nav-link" href="./privacy.html">Privacy</a>
+            </li>
+            <li class="m-3">
+              <a class="nav-link" href="./contactus.html">Contact Us</a>
+            </li>
+            <li class="m-3">
+              <a class="nav-link" href="./forum.html">Forum</a>
+            </li>
+            <li class="m-3"><a class="nav-link" href="./faq.html">FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <!--Modals-->
+    <!--For login-->
+    <div id="loginContainer" class="modal fade" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content pbet-item-container">
+          <div class="modal-header">
+            <div class="w-100">
+              <h5 class="modal-title">Login</h5>
+            </div>
+            <div class="w-100">
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+          </div>
+          <div class="modal-body">
+            <div class="text-danger"></div>
+            <form id="loginForm" action="#login">
+              <div class="form-group row">
+                <div class="col"><label>Username:</label></div>
+                <div class="col">
+                  <input
+                    type="text"
+                    name="username"
+                    class="form-control"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col"><label>Password:</label></div>
+                <div class="col">
+                  <input
+                    type="password"
+                    name="password"
+                    class="form-control"
+                    required
+                  />
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button form="loginForm" type="submit" class="btn btn-primary">
+              Login
+            </button>
+            <span class="m-3">OR</span>
+            <a
+              href="#register"
+              class="nav-link"
+              data-dismiss="modal"
+              data-toggle="modal"
+              data-target="#registerContainer"
+            >
+              Register
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--For register-->
+    <div id="registerContainer" class="modal fade" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content pbet-item-container">
+          <div class="modal-header">
+            <h5 class="modal-title">Register</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="text-danger"></div>
+            <form id="registerForm" action="#register">
+              <div class="form-group row">
+                <div class="col"><label>Name:</label></div>
+                <div class="col">
+                  <input type="text" name="name" class="form-control" />
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col"><label>Surname:</label></div>
+                <div class="col">
+                  <input type="text" name="surname" class="form-control" />
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col"><label>Email:</label></div>
+                <div class="col">
+                  <input type="email" name="email" class="form-control" />
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col"><label>Phone Number:</label></div>
+                <div class="col">
+                  <input type="text" name="phoneNumber" class="form-control" />
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col"><label>Password:</label></div>
+                <div class="col">
+                  <input type="password" name="password" class="form-control" />
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button form="registerForm" type="submit" class="btn btn-primary">
+              Register
+            </button>
+            OR
+            <a
+              href="#login"
+              class="nav-link"
+              data-dismiss="modal"
+              data-toggle="modal"
+              data-target="#loginContainer"
+            >
+              Login
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--For viewing your bet slip-->
+    <div
+      id="userBetSlipContainer"
+      class="modal fade"
+      tabindex="-1"
+      role="dialog"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content pbet-item-container" style="min-height: 60vh">
+          <div class="modal-header">
+            <h5 class="modal-title">Bet Slip</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="text-danger" id="betSummary"></div>
+            <div class="d-flex justify-content-end">
+              <a href="#" class="btn" id="removeAllSelections">
+                <i class="fa-solid fa-trash-can"></i
+                ><span class="m-1">Clear</span>
+              </a>
+            </div>
+            <ul id="selectedBets"></ul>
+          </div>
+          <div class="modal-footer">
+            <div class="d-flex flex-column">
+              <div class="form-group row">
+                <div class="col"><label>Wager Amount:</label></div>
+                <div class="col">
+                  <input
+                    type="number"
+                    id="wagerAmount"
+                    class="form-control"
+                    value="10"
+                    min="0"
+                    max="1000000"
+                  />
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col">
+                  <label>Potential return: </label>
+                </div>
+                <div class="col"><span id="potentialReturn"></span></div>
+              </div>
+              <div class="d-flex justify-content-between">
+                <div class="d-flex justify-content-start">
+                  <button
+                    type="button"
+                    data-toggle="modal"
+                    data-target="#confirmBetSlip"
+                    data-dismiss="modal"
+                    class="btn btn-primary"
+                    id="placeBetBtn"
+                  >
+                    Place bet
+                  </button>
+                </div>
+                <div class="d-flex justify-content-end">
+                  <a href="./slips.html" class="btn btn-secondary">
+                    View slips
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--For confirming placing the bet-->
+    <div id="confirmBetSlip" class="modal fade" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content pbet-item-container">
+          <div class="modal-header">
+            <h5 class="modal-title"></h5>
+          </div>
+          <div class="modal-body">
+            <div class="d-flex flex-column">
+              <div class="d-flex justify-content-center">
+                <img class="success-img" src="./images/approved.png" />
+              </div>
+              <div class="d-flex justify-content-center">
+                <h3 class="text-success">!!Success</h3>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer justify-content-center">
+            <div class="d-flex flex-row justify-content-between w-100">
+              <div class="d-flex flex-row">
+                <div class="col">
+                  <input
+                    type="checkbox"
+                    id="saveBetCheck"
+                    class="form-check mt-2 d-inline-block"
+                  />
+                  <label>Save bet selections</label>
+                </div>
+              </div>
+              <div class="d-flex justify-content-end">
+                <button
+                  type="button"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                  class="btn btn-primary"
+                  id="finishBetBtn"
+                >
+                  Continue
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--For confirming logout-->
+    <div
+      id="confLogoutContainer"
+      class="modal fade"
+      tabindex="-1"
+      role="dialog"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content pbet-item-container">
+          <div class="modal-header">
+            <h5 class="modal-title">Confirm</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>You leaving so soon?</p>
+          </div>
+          <div class="modal-footer">
+            <a id="logoutLink" href="#logout" class="btn btn-primary">Logout</a>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Back
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./Jquery/jquery-3.6.4.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/javascript.util/0.12.12/javascript.util.min.js"
+      integrity="sha512-oHBLR38hkpOtf4dW75gdfO7VhEKg2fsitvHZYHZjObc4BPKou2PGenyxA5ZJ8CCqWytBx5wpiSqwVEBy84b7tw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script src="./js/cookie-setttings.js"></script>
+    <script src="./js/data.js"></script>
+    <script src="./js/user-session-management.js"></script>
+    <script src="./js/bet-slip-management.js"></script>
+    <script>
+      $("#finishBetBtn").on("click", function () {
+        if ($("#saveBetCheck").is(":checked")) {
+          return true;
+        } else {
+          $("#selectedBets").empty();
+          $("#betList").empty();
+          loadContent();
+          return true;
+        }
+      });
+      $("#removeAllSelections").on("click", function () {
+        removeAllSelections();
+        $("#betList").empty();
+        loadContent();
+        $("#selectedBets").empty();
+        loadCurrentBetSlip();
+      });
+      $("#placeBetBtn").on("click", function () {
+        var wagerAm = $("#wagerAmount").val();
+        var potReturn = $("#potentialReturn").html();
+        if (!addSlip(wagerAm, potReturn)) {
+          $("#betSummary").html(
+            "Please add some bets!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+          );
+          return false;
+        } else {
+          var returnAmount = updateUserAmount(Number(wagerAm) * -1);
+          $("#userAmountLabel").html(" R " + returnAmount);
+          return true;
+        }
+        return true;
+      });
+      $("#wagerAmount").on("change", function () {
+        var amount = $(this).val();
+        if (amount !== NaN && amount !== undefined && amount >= 0) {
+          reCalculateTotal();
+        } else if (amount < 0 || amount > 1000000) {
+          $(this).val(0);
+        }
+      });
+      $("#selectionCount").html(getCurrentSlip().length);
+      //loading the content of the sections of the betslip popup
+      function loadCurrentBetSlip() {
+        var currentSlip = getCurrentSlip();
+        var itemIndex = 0;
+        $(currentSlip).each(function () {
+          var thisItem = this;
+          $("#selectedBets").append(
+            $("<li>").append(
+              $("<div>")
+                .addClass(function () {
+                  return "bet-selection-item";
+                })
+                .append(function () {
+                  return (
+                    "<div>" +
+                    thisItem.eventInfo.typeDetails.HomeTeam +
+                    "<br/> vs<br/>" +
+                    thisItem.eventInfo.typeDetails.awayTeam +
+                    "</div><div> Date: " +
+                    thisItem.eventInfo.startDate +
+                    "<br/>" +
+                    "Time: " +
+                    thisItem.eventInfo.startTime +
+                    "</div>" +
+                    "</div>" +
+                    "<div> Your Selection:<br/><strong>" +
+                    thisItem.selection +
+                    "</strong></div>" +
+                    "<div>Odds: <strong>" +
+                    thisItem.odds
+                  );
+                })
+                .append(function () {
+                  return $("<div>").append(function () {
+                    return $("<a>")
+                      .attr("href", "#")
+                      .on("click", function () {
+                        removeFromSlip({
+                          id: thisItem.eventId,
+                          selection: thisItem.selection,
+                        });
+                        $("#betList").empty();
+                        loadContent();
+                        $("#selectedBets").empty();
+                        loadCurrentBetSlip();
+                      })
+                      .html(
+                        '<span class="close" aria-hidden="true">&times;</span>'
+                      );
+                  });
+                })
+            )
+          );
+          itemIndex++;
+        });
+        $("#selectionCount").html(currentSlip.length);
+        reCalculateTotal();
+      }
+      //loading the content of the sections page
+      (function initialCalculation() {
+        reCalculateTotal();
+      })();
+      function reCalculateTotal() {
+        var slip = getCurrentSlip();
+        var totalOdds = 1;
+        var wagerAmount = $("#wagerAmount").val();
+        for (let i = 0; i < slip.length; i++) {
+          totalOdds *= slip[i].odds;
+        }
+        $("#potentialReturn").html((wagerAmount * totalOdds).toFixed(2));
+        return (wagerAmount * totalOdds).toFixed(2);
+      }
+      function loadContent() {
+        $(soccerData).each(function () {
+          var currentSlip = getCurrentSlip();
+          let exist = false;
+          var thisItem = this;
+          $("#betList").append(
+            $("<li>")
+              .append(
+                $("<div>")
+                  .addClass("bet-item-header")
+                  .append(
+                    "<span>" +
+                      this.startDate +
+                      " at " +
+                      this.startTime +
+                      "</span>"
+                  )
+                  .append("<span>" + this.typeDetails.leagueName + "</span>")
+                  .append("<span>Top games of the week</span>")
+              )
+              .append(
+                $("<div>")
+                  .addClass("bet-item")
+                  .append(
+                    $("<a>")
+                      .append(
+                        this.typeDetails.HomeTeam +
+                          "<span>" +
+                          this.typeDetails.oddsHomeTeam +
+                          "</span>"
+                      )
+                      .addClass(function (n) {
+                        var matchCount = 0;
+                        if (currentSlip.length > 0) {
+                          for (let ev = 0; ev < currentSlip.length; ev++) {
+                            if (
+                              thisItem.eventId == currentSlip[ev].eventId &&
+                              currentSlip[ev].selection == "Home-Win"
+                            ) {
+                              matchCount = matchCount + 1;
+                            }
+                          }
+                          if (matchCount > 0) {
+                            return "bg-added disabled";
+                          } else {
+                            $(this).on("click", function () {
+                              $(this).addClass("disabled bg-added");
+                              $(this).removeClass("bg-success");
+                              console.log("clicked");
+                              $(this).off("click");
+                              var selection = {
+                                eventId: thisItem.eventId,
+                                eventInfo: thisItem,
+                                selection: "Home-Win",
+                                odds: thisItem.typeDetails.oddsHomeTeam,
+                              };
+                              addToSlip(selection);
+                              $("#selectedBets").empty();
+                              loadCurrentBetSlip();
+                              reCalculateTotal();
+                            });
+                            return "bg-success";
+                          }
+                        } else {
+                          $(this).on("click", function () {
+                            $(this).addClass("disabled bg-added");
+                            $(this).removeClass("bg-success");
+                            console.log("clicked");
+                            $(this).off("click");
+                            var selection = {
+                              eventId: thisItem.eventId,
+                              eventInfo: thisItem,
+                              selection: "Home-Win",
+                              odds: thisItem.typeDetails.oddsHomeTeam,
+                            };
+                            addToSlip(selection);
+                            $("#selectedBets").empty();
+                            loadCurrentBetSlip();
+                            reCalculateTotal();
+                          });
+                          return "bg-success";
+                        }
+                      })
+                  )
+                  .append(
+                    $("<a>")
+                      .append(
+                        "Draw" +
+                          "<span>" +
+                          this.typeDetails.oddsDraw +
+                          "</span>"
+                      )
+                      .addClass(function (n) {
+                        var matchCount = 0;
+                        if (currentSlip.length > 0) {
+                          for (let ev = 0; ev < currentSlip.length; ev++) {
+                            if (
+                              thisItem.eventId == currentSlip[ev].eventId &&
+                              currentSlip[ev].selection == "Draw"
+                            ) {
+                              matchCount = matchCount + 1;
+                            }
+                          }
+                          if (matchCount > 0) {
+                            return "bg-added";
+                          } else {
+                            $(this).on("click", function () {
+                              $(this).addClass("disabled bg-added");
+                              $(this).removeClass("bg-success");
+                              $(this).off("click");
+                              var selection = {
+                                eventId: thisItem.eventId,
+                                eventInfo: thisItem,
+                                selection: "Draw",
+                                odds: thisItem.typeDetails.oddsDraw,
+                              };
+                              addToSlip(selection);
+                              $("#betList").empty();
+                              loadContent();
+                              $("#selectedBets").empty();
+                              loadCurrentBetSlip();
+                              reCalculateTotal();
+                            });
+                            return "bg-success";
+                          }
+                        } else {
+                          $(this).on("click", function () {
+                            $(this).addClass("disabled bg-added");
+                            $(this).removeClass("bg-success");
+                            $(this).off("click");
+                            var selection = {
+                              eventId: thisItem.eventId,
+                              eventInfo: thisItem,
+                              selection: "Draw",
+                              odds: thisItem.typeDetails.oddsDraw,
+                            };
+                            addToSlip(selection);
+                            $("#betList").empty();
+                            loadContent();
+                            $("#selectedBets").empty();
+                            loadCurrentBetSlip();
+                            reCalculateTotal();
+                          });
+                          return "bg-success";
+                        }
+                      })
+                  )
+                  .append(
+                    $("<a>")
+                      .append(
+                        this.typeDetails.awayTeam +
+                          "<span>" +
+                          this.typeDetails.oddsAwayTeam +
+                          "</span>"
+                      )
+                      .addClass(function (n) {
+                        var matchCount = 0;
+                        if (currentSlip.length > 0) {
+                          for (let aw = 0; aw < currentSlip.length; aw++) {
+                            if (
+                              thisItem.eventId == currentSlip[aw].eventId &&
+                              currentSlip[aw].selection == "Away-Win"
+                            ) {
+                              matchCount = matchCount + 1;
+                            }
+                          }
+                          if (matchCount > 0) {
+                            $(this).off("click");
+                            return "bg-added";
+                          } else {
+                            $(this).on("click", function () {
+                              $(this).addClass("disabled bg-added");
+                              $(this).removeClass("bg-success");
+                              $(this).off("click");
+                              var selection = {
+                                eventId: thisItem.eventId,
+                                eventInfo: thisItem,
+                                selection: "Away-Win",
+                                odds: thisItem.typeDetails.oddsAwayTeam,
+                              };
+                              addToSlip(selection);
+                              $("#betList").empty();
+                              loadContent();
+                              $("#selectedBets").empty();
+                              loadCurrentBetSlip();
+                              reCalculateTotal();
+                            });
+                            return "bg-success";
+                          }
+                        } else {
+                          $(this).on("click", function () {
+                            $(this).addClass("disabled bg-added");
+                            $(this).removeClass("bg-success");
+                            $(this).off("click");
+                            var selection = {
+                              eventId: thisItem.eventId,
+                              eventInfo: thisItem,
+                              selection: "Away-Win",
+                              odds: thisItem.typeDetails.oddsAwayTeam,
+                            };
+                            addToSlip(selection);
+                            $("#betList").empty();
+                            loadContent();
+                            $("#selectedBets").empty();
+                            loadCurrentBetSlip();
+                            reCalculateTotal();
+                          });
+                          return "bg-success";
+                        }
+                      })
+                  )
+                  .append(
+                    $("<div>")
+                      .addClass("dropdown")
+                      .append(
+                        $("<button>")
+                          .attr("type", "button")
+                          .attr(
+                            "id",
+                            "event" + thisItem.eventId + "optionToggle"
+                          )
+                          .attr("data-toggle", "dropdown")
+                          .attr("aria-haspopup", "true")
+                          .attr("aria-expanded", "false")
+                          .append(
+                            'more <i class="fa-solid fa-ellipsis-vertical"></i>'
+                          )
+                          .addClass("btn dropdown-toggle")
+                      )
+                      .append(
+                        $("<div>")
+                          .attr(
+                            "aria-labelledby",
+                            "event" + thisItem.eventId + "optionToggle"
+                          )
+                          .addClass("dropdown-menu")
+                          .append(
+                            $("<a>")
+                              .attr("href", "#")
+                              .addClass("dropdown-item")
+                              .html("Draw OR Home win")
+
+                              .addClass(function (n) {
+                                var matchCount = 0;
+                                if (currentSlip.length > 0) {
+                                  for (
+                                    let aw = 0;
+                                    aw < currentSlip.length;
+                                    aw++
+                                  ) {
+                                    if (
+                                      thisItem.eventId ==
+                                        currentSlip[aw].eventId &&
+                                      currentSlip[aw].selection ==
+                                        "Draw-Home-Win"
+                                    ) {
+                                      matchCount = matchCount + 1;
+                                    }
+                                  }
+                                  if (matchCount > 0) {
+                                    return "bg-added";
+                                  } else {
+                                    $(this).on("click", function () {
+                                      $(this).addClass("disabled bg-added");
+                                      $(this).off("click");
+                                      var selection = {
+                                        eventId: thisItem.eventId,
+                                        eventInfo: thisItem,
+                                        selection: "Draw-Home-Win",
+                                        odds: (
+                                          thisItem.typeDetails.oddsHomeTeam *
+                                          0.75
+                                        ).toFixed(2),
+                                      };
+                                      addToSlip(selection);
+                                      $("#betList").empty();
+                                      loadContent();
+                                      $("#selectedBets").empty();
+                                      loadCurrentBetSlip();
+                                      reCalculateTotal();
+                                    });
+                                    return "";
+                                  }
+                                } else {
+                                  $(this).on("click", function () {
+                                    $(this).addClass("disabled bg-added");
+                                    $(this).off("click");
+                                    var selection = {
+                                      eventId: thisItem.eventId,
+                                      eventInfo: thisItem,
+                                      selection: "Draw-Home-Win",
+                                      odds: (
+                                        thisItem.typeDetails.oddsHomeTeam * 0.75
+                                      ).toFixed(2),
+                                    };
+                                    addToSlip(selection);
+                                    $("#betList").empty();
+                                    loadContent();
+                                    $("#selectedBets").empty();
+                                    loadCurrentBetSlip();
+                                    reCalculateTotal();
+                                  });
+                                  return "";
+                                }
+                              })
+                          )
+                          .append(
+                            $("<a>")
+                              .attr("href", "#")
+                              .addClass("dropdown-item")
+                              .html("Draw OR Away win")
+
+                              .addClass(function (n) {
+                                var matchCount = 0;
+                                if (currentSlip.length > 0) {
+                                  for (
+                                    let aw = 0;
+                                    aw < currentSlip.length;
+                                    aw++
+                                  ) {
+                                    if (
+                                      thisItem.eventId ==
+                                        currentSlip[aw].eventId &&
+                                      currentSlip[aw].selection ==
+                                        "Draw-Away-Win"
+                                    ) {
+                                      matchCount = matchCount + 1;
+                                    }
+                                  }
+                                  if (matchCount > 0) {
+                                    $(this).off("click");
+                                    return "bg-added";
+                                  } else {
+                                    $(this).on("click", function () {
+                                      $(this).addClass("disabled bg-added");
+                                      $(this).off("click");
+                                      var selection = {
+                                        eventId: thisItem.eventId,
+                                        eventInfo: thisItem,
+                                        selection: "Draw-Away-Win",
+                                        odds: (
+                                          thisItem.typeDetails.oddsAwayTeam *
+                                          0.4
+                                        ).toFixed(2),
+                                      };
+                                      addToSlip(selection);
+                                      $("#betList").empty();
+                                      loadContent();
+                                      $("#selectedBets").empty();
+                                      loadCurrentBetSlip();
+                                      reCalculateTotal();
+                                    });
+                                    return "";
+                                  }
+                                } else {
+                                  $(this).on("click", function () {
+                                    $(this).addClass("disabled bg-added");
+                                    $(this).off("click");
+                                    var selection = {
+                                      eventId: thisItem.eventId,
+                                      eventInfo: thisItem,
+                                      selection: "Draw-Away-Win",
+                                      odds: (
+                                        thisItem.typeDetails.oddsAwayTeam * 0.4
+                                      ).toFixed(2),
+                                    };
+                                    addToSlip(selection);
+                                    $("#betList").empty();
+                                    loadContent();
+                                    $("#selectedBets").empty();
+                                    loadCurrentBetSlip();
+                                    reCalculateTotal();
+                                  });
+                                  return "";
+                                }
+                              })
+                          )
+                          .append(
+                            $("<a>")
+                              .attr("href", "#")
+                              .addClass("dropdown-item")
+                              .html("Both teams to Win")
+
+                              .addClass(function (n) {
+                                var matchCount = 0;
+                                if (currentSlip.length > 0) {
+                                  for (
+                                    let aw = 0;
+                                    aw < currentSlip.length;
+                                    aw++
+                                  ) {
+                                    if (
+                                      thisItem.eventId ==
+                                        currentSlip[aw].eventId &&
+                                      currentSlip[aw].selection ==
+                                        "Both Teams to Win"
+                                    ) {
+                                      matchCount = matchCount + 1;
+                                    }
+                                  }
+                                  if (matchCount > 0) {
+                                    $(this).off("click");
+                                    return "bg-added";
+                                  } else {
+                                    $(this).on("click", function () {
+                                      $(this).addClass("disabled bg-added");
+                                      $(this).off("click");
+                                      var selection = {
+                                        eventId: thisItem.eventId,
+                                        eventInfo: thisItem,
+                                        selection: "Both Teams to Win",
+                                        odds: (
+                                          thisItem.typeDetails.oddsDraw * 0.4
+                                        ).toFixed(2),
+                                      };
+                                      addToSlip(selection);
+                                      $("#betList").empty();
+                                      loadContent();
+                                      $("#selectedBets").empty();
+                                      loadCurrentBetSlip();
+                                      reCalculateTotal();
+                                    });
+                                    return "";
+                                  }
+                                } else {
+                                  $(this).on("click", function () {
+                                    $(this).addClass("disabled bg-added");
+                                    $(this).off("click");
+                                    var selection = {
+                                      eventId: thisItem.eventId,
+                                      eventInfo: thisItem,
+                                      selection: "Both Teams to Win",
+                                      odds: (
+                                        thisItem.typeDetails.oddsDraw * 0.4
+                                      ).toFixed(2),
+                                    };
+                                    addToSlip(selection);
+                                    $("#betList").empty();
+                                    loadContent();
+                                    $("#selectedBets").empty();
+                                    loadCurrentBetSlip();
+                                    reCalculateTotal();
+                                  });
+                                  return "";
+                                }
+                              })
+                          )
+                      )
+                  )
+              )
+          );
+        });
+      }
+      loadContent();
+      loadCurrentBetSlip();
+      $(document).ready(function () {
+        $("#selectionCount").html(getCurrentSlip().length);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PocketBets | Privacy</title>
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./global-style.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar fixed-top navbar-expand-lg navbar-dark">
+        <a class="navbar-brand align-middle" href="./football.html">
+          <div class="d-flex flex-column">
+            <img src="images/pocketbets1.png" alt="logo images" class="logo" />
+          </div>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-md-end"
+          id="navbarSupportedContent"
+        >
+          <div class="">
+            <ul id="nav-list" class="navbar-nav mr-auto nav-pills">
+              <li class="nav-item">
+                <a
+                  href="#login"
+                  class="nav-link"
+                  data-toggle="modal"
+                  data-target="#loginContainer"
+                >
+                  Login
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  href="register"
+                  class="nav-link"
+                  data-toggle="modal"
+                  data-target="#registerContainer"
+                >
+                  Register
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="mt-5 pt-5">
+      <div class="d-flex justify-content-center">
+        <div class="pbet-item-container">
+          <h4>PocketBets</h4>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="footer">
+        <div class="d-flex justify-content-center">
+          <ul class="navbar-nav navbar-dark list-unstyled d-flex flex-row">
+            <li class="m-3">
+              <a class="nav-link" href="./privacy.html">Privacy</a>
+            </li>
+            <li class="m-3">
+              <a class="nav-link" href="./contactus.html">Contact Us</a>
+            </li>
+            <li class="m-3"><a class="nav-link" href="./faq.html">FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <!--Modals-->
+    <!--For login-->
+    <div id="loginContainer" class="modal fade" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content pbet-item-container">
+          <div class="modal-header">
+            <div class="w-100">
+              <h5 class="modal-title">Login</h5>
+            </div>
+            <div class="w-100">
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+          </div>
+          <div class="modal-body">
+            <div class="text-danger"></div>
+            <form id="loginForm" action="#login">
+              <div class="form-group row">
+                <div class="col"><label>Username:</label></div>
+                <div class="col">
+                  <input
+                    type="text"
+                    name="username"
+                    class="form-control"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col"><label>Password:</label></div>
+                <div class="col">
+                  <input
+                    type="password"
+                    name="password"
+                    class="form-control"
+                    required
+                  />
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button form="loginForm" type="button" class="btn btn-primary">
+              Login
+            </button>
+            <span class="m-3">OR</span>
+            <a
+              href="#register"
+              class="nav-link"
+              data-dismiss="modal"
+              data-toggle="modal"
+              data-target="#registerContainer"
+            >
+              Register
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--For register-->
+    <div id="registerContainer" class="modal fade" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content pbet-item-container">
+          <div class="modal-header">
+            <h5 class="modal-title">Register</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="text-danger"></div>
+            <form id="registerForm" action="#register">
+              <div class="form-group row">
+                <div class="col"><label>Name:</label></div>
+                <div class="col">
+                  <input type="text" name="name" class="form-control" />
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col"><label>Surname:</label></div>
+                <div class="col">
+                  <input type="text" name="surname" class="form-control" />
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col"><label>Email:</label></div>
+                <div class="col">
+                  <input type="email" name="email" class="form-control" />
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col"><label>Phone Number:</label></div>
+                <div class="col">
+                  <input type="text" name="phoneNumber" class="form-control" />
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col"><label>Password:</label></div>
+                <div class="col">
+                  <input type="password" name="password" class="form-control" />
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button form="registerForm" type="submit" class="btn btn-primary">
+              Register
+            </button>
+            OR
+            <a
+              href="#login"
+              class="nav-link"
+              data-dismiss="modal"
+              data-toggle="modal"
+              data-target="#loginContainer"
+            >
+              Login
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./Jquery/jquery-3.6.4.js"></script>
+    <script src="./bootstrap/js/bootstrap.min.js"></script>
+    <script src="./js/cookie-setttings.js"></script>
+    <script src="./js/data.js"></script>
+    <script src="./js/user-session-management.js"></script>
+  </body>
+</html>

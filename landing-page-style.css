@@ -1,0 +1,168 @@
+.head {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.logo {
+  width: 80px;
+}
+
+.head a {
+  color: white;
+  text-decoration: none;
+}
+
+.head .log {
+  color: yellow;
+  width: 6rem;
+  height: 2rem;
+  border-radius: 5px;
+  padding-top: 0.6rem;
+  text-align: center;
+}
+
+.head .sign {
+  color: yellow;
+  width: 6rem;
+  height: 2rem;
+  border-radius: 5px;
+  padding-top: 0.6rem;
+  text-align: center;
+}
+
+.hero-top {
+  margin: 0;
+  padding: 0;
+  color: var(--pbet-sec-txt-color) !important;
+}
+
+.home-page-img {
+  min-width: 300px;
+  min-height: 400px;
+  width: 100%;
+  height: 400px;
+}
+
+/*hero image one*/
+
+.hero-image-one {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 80%;
+  display: flex;
+  align-items: center;
+}
+
+.flex-columned-custom {
+  display: flex;
+  flex-direction: row;
+}
+.flex-columned-custom div {
+  min-width: 50%;
+  min-height: 100px;
+}
+
+.hero-image-one .hero-text {
+  margin-left: 2rem;
+}
+
+.hero-image-one .hero-text h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.hero-image-one .hero-text h1 {
+  font-size: 2rem;
+  font-weight: bolder;
+}
+
+.hero-image-one .hero-text p {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.hero-image-one .hero-btn {
+  text-decoration: none;
+  color: #fff;
+  background-color: navy;
+  border-color: navy;
+  padding: 10px 30px;
+  margin-top: 10px;
+  display: inline-block;
+  width: 50%;
+}
+
+/*hero image three*/
+
+.hero-image-three {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 80%;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.flex-columned-custom {
+  display: flex;
+  flex-direction: row;
+}
+.flex-columned-custom div {
+  min-width: 50%;
+  min-height: 100px;
+}
+
+.hero-image-three .hero-text {
+  color: var(--pbet-sec-txt-color) !important;
+  margin-left: 2rem;
+}
+
+.hero-image-three .hero-text h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.hero-image-three .hero-text h1 {
+  font-size: 2rem;
+  font-weight: bolder;
+}
+
+.hero-image-three .hero-text p {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.hero-image-three .hero-btn {
+  text-decoration: none;
+  color: #fff;
+  background-color: navy;
+  border-color: navy;
+  padding: 10px 30px;
+  margin-top: 10px;
+  display: inline-block;
+  width: 25%;
+}
+
+.content h1 {
+  display: flex;
+  justify-content: center;
+  padding: 70px;
+}
+
+.partners {
+  display: flex;
+  justify-content: center;
+}
+
+.partners img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 20%;
+  padding: 70px;
+  display: inline;
+}

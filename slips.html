@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PocketBets | Betslips</title>
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./global-style.css" />
+    <link rel="stylesheet" href="./bet-slip-style.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar fixed-top navbar-expand-lg navbar-dark">
+        <a class="navbar-brand align-middle" href="./football.html">
+          <div class="d-flex flex-column">
+            <img src="images/pocketbets1.png" alt="logo images" class="logo" />
+          </div>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-md-end"
+          id="navbarSupportedContent"
+        >
+          <div>
+            <ul id="nav-list" class="navbar-nav mr-auto nav-pills">
+              <li class="nav-item">
+                <a
+                  href="#login"
+                  class="nav-link"
+                  data-toggle="modal"
+                  data-target="#loginContainer"
+                >
+                  Login
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  href="register"
+                  class="nav-link"
+                  data-toggle="modal"
+                  data-target="#registerContainer"
+                >
+                  Register
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="mt-5 pt-5">
+      <div class="d-flex justify-content-center">
+        <div class="pbet-item-container">
+          <h4 class="text-center">View your pocket bets</h4>
+          <div class="bet-list-container">
+            <ul id="betList"></ul>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="footer">
+        <div class="d-flex justify-content-center">
+          <ul class="navbar-nav navbar-dark list-unstyled d-flex flex-row">
+            <li class="m-3">
+              <a class="nav-link" href="./privacy.html">Privacy</a>
+            </li>
+            <li class="m-3">
+              <a class="nav-link" href="./contactus.html">Contact Us</a>
+            </li>
+            <li class="m-3"><a class="nav-link" href="./faq.html">FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <!--Modals-->
+    <!--For login-->
+    <div id="loginContainer" class="modal fade" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content pbet-item-container">
+          <div class="modal-header">
+            <div class="w-100">
+              <h5 class="modal-title">Login</h5>
+            </div>
+            <div class="w-100">
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+          </div>
+          <div class="modal-body">
+            <div class="text-danger"></div>
+            <form id="loginForm" action="#login">
+              <div class="form-group row">
+                <div class="col"><label>Username:</label></div>
+                <div class="col">
+                  <input
+                    type="text"
+                    name="username"
+                    class="form-control"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col"><label>Password:</label></div>
+                <div class="col">
+                  <input
+                    type="password"
+                    name="password"
+                    class="form-control"
+                    required
+                  />
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button form="loginForm" type="submit" class="btn btn-primary">
+              Login
+            </button>
+            <span class="m-3">OR</span>
+            <a
+              href="#register"
+              class="nav-link"
+              data-dismiss="modal"
+              data-toggle="modal"
+              data-target="#registerContainer"
+            >
+              Register
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--For register-->
+    <div id="registerContainer" class="modal fade" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content pbet-item-container">
+          <div class="modal-header">
+            <h5 class="modal-title">Register</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="text-danger"></div>
+            <form id="registerForm" action="#register">
+              <div class="form-group row">
+                <div class="col"><label>Name:</label></div>
+                <div class="col">
+                  <input type="text" name="name" class="form-control" />
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col"><label>Surname:</label></div>
+                <div class="col">
+                  <input type="text" name="surname" class="form-control" />
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col"><label>Email:</label></div>
+                <div class="col">
+                  <input type="email" name="email" class="form-control" />
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col"><label>Phone Number:</label></div>
+                <div class="col">
+                  <input type="text" name="phoneNumber" class="form-control" />
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col"><label>Password:</label></div>
+                <div class="col">
+                  <input type="password" name="password" class="form-control" />
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button form="registerForm" type="submit" class="btn btn-primary">
+              Register
+            </button>
+            OR
+            <a
+              href="#login"
+              class="nav-link"
+              data-dismiss="modal"
+              data-toggle="modal"
+              data-target="#loginContainer"
+            >
+              Login
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--For viewing your bet slip-->
+    <div
+      id="userBetSlipContainer"
+      class="modal fade"
+      tabindex="-1"
+      role="dialog"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content pbet-item-container" style="min-height: 60vh">
+          <div class="modal-header">
+            <h5 class="modal-title">Bet Slip</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="text-danger" id="betSummary"></div>
+            <div class="d-flex justify-content-end">
+              <a href="#" class="btn" id="removeAllSelections">
+                <i class="fa-solid fa-trash-can"></i
+                ><span class="m-1">Clear</span>
+              </a>
+            </div>
+            <ul id="selectedBets"></ul>
+          </div>
+          <div class="modal-footer">
+            <div class="d-flex flex-column">
+              <div class="form-group row">
+                <div class="col"><label>Wager Amount:</label></div>
+                <div class="col">
+                  <input
+                    type="number"
+                    id="wagerAmount"
+                    class="form-control"
+                    value="10"
+                    min="0"
+                    max="1000000"
+                  />
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col">
+                  <label>Potential return: </label>
+                </div>
+                <div class="col"><span id="potentialReturn"></span></div>
+              </div>
+              <div class="d-flex justify-content-between">
+                <div class="d-flex justify-content-start">
+                  <button
+                    type="button"
+                    data-toggle="modal"
+                    data-target="#confirmBetSlip"
+                    data-dismiss="modal"
+                    class="btn btn-primary"
+                    id="placeBetBtn"
+                  >
+                    Place bet
+                  </button>
+                </div>
+                <div class="d-flex justify-content-end">
+                  <a href="./slips.html" class="btn btn-secondary">
+                    View slips
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--For confirming placing the bet-->
+    <div id="confirmBetSlip" class="modal fade" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content pbet-item-container">
+          <div class="modal-header">
+            <h5 class="modal-title"></h5>
+          </div>
+          <div class="modal-body">
+            <div class="d-flex flex-column">
+              <div class="d-flex justify-content-center">
+                <img class="success-img" src="./images/approved.png" />
+              </div>
+              <div class="d-flex justify-content-center">
+                <h3 class="text-success">!!Success</h3>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer justify-content-center">
+            <div class="d-flex flex-row justify-content-between w-100">
+              <div class="d-flex flex-row">
+                <div class="col">
+                  <input
+                    type="checkbox"
+                    id="saveBetCheck"
+                    class="form-check mt-2 d-inline-block"
+                  />
+                  <label>Save bet selections</label>
+                </div>
+              </div>
+              <div class="d-flex justify-content-end">
+                <button
+                  type="button"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                  class="btn btn-primary"
+                  id="finishBetBtn"
+                >
+                  Continue
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--For confirming logout-->
+    <div
+      id="confLogoutContainer"
+      class="modal fade"
+      tabindex="-1"
+      role="dialog"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content pbet-item-container">
+          <div class="modal-header">
+            <h5 class="modal-title">Confirm</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>You leaving so soon?</p>
+          </div>
+          <div class="modal-footer">
+            <a id="logoutLink" href="#logout" class="btn btn-primary">Logout</a>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Back
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="confirmCashOut" class="modal fade" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content pbet-item-container">
+          <div class="modal-header">
+            <h5 class="modal-title"></h5>
+          </div>
+          <div class="modal-body">
+            <div class="d-flex flex-column">
+              <div class="d-flex justify-content-center">
+                <i class="fa-regular fa-money-check-dollar"></i>
+              </div>
+              <div class="d-flex justify-content-center">
+                <h3 class="text-success">!!Cashed Out</h3>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer justify-content-center">
+            <div class="d-flex flex-row justify-content-between w-100">
+              <div class="d-flex justify-content-end">
+                <button
+                  type="button"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                  class="btn btn-primary"
+                >
+                  Continue
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./Jquery/jquery-3.6.4.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/javascript.util/0.12.12/javascript.util.min.js"
+      integrity="sha512-oHBLR38hkpOtf4dW75gdfO7VhEKg2fsitvHZYHZjObc4BPKou2PGenyxA5ZJ8CCqWytBx5wpiSqwVEBy84b7tw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script src="./js/cookie-setttings.js"></script>
+    <script src="./js/data.js"></script>
+    <script src="./js/user-session-management.js"></script>
+    <script src="./js/bet-slip-management.js"></script>
+    <script>
+      $("#finishBetBtn").on("click", function () {
+        if ($("#saveBetCheck").is(":checked")) {
+          return true;
+        } else {
+          $("#selectedBets").empty();
+          $("#betList").empty();
+          loadContent();
+          return true;
+        }
+      });
+      $("#removeAllSelections").on("click", function () {
+        removeAllSelections();
+        $("#betList").empty();
+        loadContent();
+        $("#selectedBets").empty();
+        loadCurrentBetSlip();
+      });
+      $("#placeBetBtn").on("click", function () {
+        var wagerAm = $("#wagerAmount").val();
+        var potReturn = $("#potentialReturn").html();
+        if (!addSlip(wagerAm, potReturn)) {
+          $("#betSummary").html(
+            "Please add some bets!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+          );
+          return false;
+        } else {
+          return true;
+        }
+        return true;
+      });
+      $("#wagerAmount").on("change", function () {
+        var amount = $(this).val();
+        if (amount !== NaN && amount !== undefined && amount >= 0) {
+          reCalculateTotal();
+        } else if (amount < 0 || amount > 1000000) {
+          $(this).val(0);
+        }
+      });
+      $("#selectionCount").html(getCurrentSlip().length);
+      //loading the content of the sections of the betslip popup
+      function loadCurrentBetSlip() {
+        var currentSlip = getCurrentSlip();
+        var itemIndex = 0;
+        $(currentSlip).each(function () {
+          var thisItem = this;
+          $("#selectedBets").append(
+            $("<li>").append(
+              $("<div>")
+                .addClass(function () {
+                  return "bet-selection-item";
+                })
+                .append(function () {
+                  return (
+                    "<div>" +
+                    thisItem.eventInfo.typeDetails.HomeTeam +
+                    "<br/> vs<br/>" +
+                    thisItem.eventInfo.typeDetails.awayTeam +
+                    "</div><div> Date: " +
+                    thisItem.eventInfo.startDate +
+                    "<br/>" +
+                    "Time: " +
+                    thisItem.eventInfo.startTime +
+                    "</div>" +
+                    "</div>" +
+                    "<div> Your Selection:<br/><strong>" +
+                    thisItem.selection +
+                    "</strong></div>" +
+                    "<div>Odds: <strong>" +
+                    thisItem.odds
+                  );
+                })
+                .append(function () {
+                  return $("<div>").append(function () {
+                    return $("<a>")
+                      .attr("href", "#")
+                      .on("click", function () {
+                        removeFromSlip({
+                          id: thisItem.eventId,
+                          selection: thisItem.selection,
+                        });
+                        $("#betList").empty();
+                        loadContent();
+                        $("#selectedBets").empty();
+                        loadCurrentBetSlip();
+                      })
+                      .html(
+                        '<span class="close" aria-hidden="true">&times;</span>'
+                      );
+                  });
+                })
+            )
+          );
+          itemIndex++;
+        });
+        $("#selectionCount").html(currentSlip.length);
+        reCalculateTotal();
+      }
+      //loading the content of the sections page
+      (function initialCalculation() {
+        reCalculateTotal();
+      })();
+      function reCalculateTotal() {
+        var slip = getCurrentSlip();
+        var totalOdds = 1;
+        var wagerAmount = $("#wagerAmount").val();
+        for (let i = 0; i < slip.length; i++) {
+          totalOdds *= slip[i].odds;
+        }
+        $("#potentialReturn").html((wagerAmount * totalOdds).toFixed(2));
+        return (wagerAmount * totalOdds).toFixed(2);
+      }
+      function loadContent() {
+        var userSlips = getAllSlips();
+        let itemCount = 0;
+        if (userSlips.length > 0) {
+          $(userSlips).each(function () {
+            var thisItem = this;
+            $("#betList").append(function () {
+              var listString = "";
+              for (let i = 0; i < thisItem.items.length; i++) {
+                listString =
+                  listString +
+                  `<div class="d-flex justify-content-between flex-row border-bottom">
+                    <div class="m-2 w-25">
+                    ${thisItem.items[i].eventInfo.typeDetails.HomeTeam} 
+                    vs ${thisItem.items[i].eventInfo.typeDetails.awayTeam}
+                    </div>
+                    <div class="m-2">
+                    Selection: ${thisItem.items[i].selection}</div>
+                    <div class="m-2">
+                        Odds: ${thisItem.items[i].odds}
+                    </div> 
+                </div>`;
+              }
+              return `<li class="m-2">
+            <div class="d-flex justify-content-center">
+            <div >
+              <div class="d-flex flex-row">
+                <a class="btn btn-primary" 
+                data-toggle="collapse" 
+                href="#containerFor${itemCount}" 
+                role="button" aria-expanded="false" 
+                aria-controls="containerFor${itemCount}">
+                  <div class="d-flex justify-content-center">
+                      <div class="m-2">Date: ${thisItem.date} </div> |
+                      <div class="m-2">Wager Amount: ${thisItem.wagerAmount} </div> |
+                      <div class="m-2">Potential Return: R ${thisItem.potentialReturn} </div>
+                  </div>
+                </a>
+              <div class="m-2">
+                      <button type="button" 
+                        class="btn btn-secondary cashOutBtnForJs"
+                        data-target="#confirmCashOut"
+                        onClick="addListenerForCashOut(${thisItem.wagerAmount}, ${itemCount}, ${thisItem.potentialReturn})"
+                        data-toggle="modal"
+                        data-pbet-item-index="${itemCount}"
+                        data-pbet-item-wager="${thisItem.wagerAmount}">
+                        Cash out
+                      </button> 
+              </div>
+              
+            </div>
+            <div class="collapse m-3" id="containerFor${itemCount}">
+                <div class="card card-body">
+                    <div class="d-flex flex-column justify-content-center">
+                    ${listString}
+                    </div>
+                </div>
+              </div>
+            </div>
+            </div>
+            </li>`;
+            });
+            itemCount++;
+          });
+        } else {
+          $("#betList").append(
+            "<h5 class='text-center text-danger'>You currently dont have any slips</h5>"
+          );
+        }
+      }
+      loadContent();
+      loadCurrentBetSlip();
+      $(document).ready(function () {
+        $("#selectionCount").html(getCurrentSlip().length);
+        $("button.cashOutBtnForJs").on("click", function () {
+          // var slipWagerAmount = $(this).attr("data-pbet-item-wager");
+          // var slipIndex = $(this).attr("data-pbet-item-index");
+          // var returnAmount = updateUserAmount(slipWagerAmount);
+          // console.log("clickd");
+          // var cashOutResponse = confirm("Are you sure you wish to cash out?");
+          // if (cashOutResponse) {
+          //   $("#userAmountLabel").html(" R " + returnAmount);
+          //   removeSlip(slipIndex);
+          //   $("#betList").empty();
+          //   loadContent();
+          // } else {
+          //   return false;
+          // }
+        });
+      });
+      function addListenerForCashOut(wager, index, returnAmount) {
+        var slipWagerAmount = wager;
+        var slipIndex = index;
+        var returnAmount = updateUserAmount(slipWagerAmount);
+        var cashOutResponse = confirm("Are you sure you wish to cash out?");
+        if (cashOutResponse) {
+          $("#userAmountLabel").html(" R " + returnAmount);
+          removeSlip(slipIndex);
+          $("#betList").empty();
+          loadContent();
+        } else {
+          return false;
+        }
+      }
+    </script>
+  </body>
+</html>

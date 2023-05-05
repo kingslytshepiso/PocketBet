@@ -1,0 +1,25 @@
+.forum-list {
+  list-style-type: none;
+  padding: 2px;
+  margin: 5px;
+}
+.forum-item {
+  background-color: #fff;
+  width: 100%;
+  margin: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 4px 10px 12px rgba(0, 0, 0, 0.4);
+}
+.forum-item-header {
+  margin: 5px;
+  padding: 5px;
+}
+.forum-item-content {
+  margin: 5px;
+  padding: 5px;
+}
+.forum-item-footer {
+  margin: 5px;
+  padding: 5px;
+}

@@ -1,0 +1,141 @@
+* {
+  --pbet-pr-bg-color: navy;
+  --pbet-pr-txt-color: white;
+  --pbet-sec-bg-color: yellow;
+  --pbet-sec-txt-color: navy;
+  --pbet-ter-bg-color: black;
+  transition: 200ms;
+}
+body {
+  background: var(--pbet-pr-bg-color);
+  color: var(--pbet-pr-txt-color);
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: navy;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease-in-out;
+}
+.deposit-button {
+  background-color: navy;
+  color: #fff;
+}
+.btn:hover {
+  background-color: #444;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: navy;
+}
+
+.btn-danger {
+  background-color: navy;
+}
+
+.form-container {
+  margin: 50px;
+  padding: 20px;
+  border: 2px solid yellow;
+  border-radius: 5px;
+}
+
+.form-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container label {
+  margin-bottom: 10px;
+}
+
+.form-container input {
+  padding: 5px;
+  margin-bottom: 2px;
+  border-radius: 3px;
+}
+
+.form-container button {
+  padding: 10px;
+  background-color: navy;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.form-container button:hover {
+  background-color: yellow;
+}
+body {
+  background-color: #000080;
+}
+.popup {
+  width: 400px;
+  background: white;
+  border-radius: 6px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.1);
+  text-align: center;
+  padding: 0 30px 30px;
+  visibility: hidden;
+  transition: transform 0.4s, top 0.4s;
+}
+.open-popup {
+  visibility: visible;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+img {
+  width: 80px;
+  display: block;
+  margin-top: -10px;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  margin-top: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.popup h2 {
+  font-size: 38px;
+  font-weight: 500;
+  margin: 30px 0 10px;
+}
+.popup button {
+  width: 100%;
+  margin-top: 50px;
+  padding: 10px 0;
+  background: white;
+  color: navy;
+  border: 0;
+  outline: none;
+  font-size: 18px;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+.signupbtn {
+  padding: 10px 60px;
+  background: #fff;
+  border: 0;
+  outline: none;
+  margin: 25%;
+  cursor: pointer;
+  font-size: 22px;
+  font-weight: 500;
+  border-radius: 30px;
+}
+.deposit-button {
+  background-color: #000080;
+  color: white;
+}
